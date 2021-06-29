@@ -1,22 +1,28 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Home from '../components/Home.vue'
+import FirstJournal from '../components/FirstJournal.vue'
+import SecondJournal from '../components/SecondJournal.vue'
+import Layout from '../components/Layout.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'Home',
-  //   component: Home
-  // },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
+  {
+    path: '/',
+    component: Home,
+    meta: { requiredLayout: Layout }
+  },
+  {
+    path: '/firstjournal',
+    component: FirstJournal,
+    meta: { requiredLayout: Layout }
+  },
+  {
+    path: '/secondjournal',
+    component: SecondJournal,
+    meta: { requiredLayout: Layout }
+  }
 ]
 
 const router = new VueRouter({
