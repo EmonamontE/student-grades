@@ -27,11 +27,11 @@ export default {
       return [
         {
           title: '10А класс',
-          route: '/firstjournal'
+          route: '/class10A'
         },
         {
           title: '10Б класс',
-          route: '/secondjournal'
+          route: '/class10B'
         }
       ]
     }

@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../components/Home.vue'
-import FirstJournal from '../components/FirstJournal.vue'
-import SecondJournal from '../components/SecondJournal.vue'
+import class10A from '../components/Class10A.vue'
+import class10B from '../components/Class10B.vue'
 import Layout from '../components/Layout.vue'
 
 Vue.use(VueRouter)
@@ -14,13 +14,13 @@ const routes = [
     meta: { requiredLayout: Layout }
   },
   {
-    path: '/firstjournal',
-    component: FirstJournal,
+    path: '/class10A',
+    component: class10A,
     meta: { requiredLayout: Layout }
   },
   {
-    path: '/secondjournal',
-    component: SecondJournal,
+    path: '/class10B',
+    component: class10B,
     meta: { requiredLayout: Layout }
   }
 ]
