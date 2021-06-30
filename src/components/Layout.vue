@@ -2,10 +2,10 @@
   <div>
     <v-toolbar app dark>
       <v-toolbar-title
-        v-text="'Greetings, Commander'"
+        v-text="'Классный журнал'"
       ></v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
+      <v-toolbar-items>
         <v-btn
           v-for="(item, i) in topMenuItems"
           flat
@@ -26,11 +26,11 @@ export default {
     topMenuItems () {
       return [
         {
-          title: 'First Journal',
+          title: '10А класс',
           route: '/firstjournal'
         },
         {
-          title: 'Second Journal',
+          title: '10Б класс',
           route: '/secondjournal'
         }
       ]

@@ -7,16 +7,18 @@
         <v-text-field
           v-model="search"
           append-icon="mdi-magnify"
-          label="Search"
+          label="Поиск"
           single-line
           hide-details
         ></v-text-field>
       </v-card-title>
       <v-data-table
-        height="85vh"
+        height="80vh"
         fixed-header
+        hide-default-footer
         :headers="headers"
         :items="students"
+        item-key="name"
         :search="search"
         :items-per-page="150"
       >
@@ -50,6 +52,34 @@
       </tbody>
     </template>
   </v-simple-table> -->
+
+  <!-- <v-data-table :headers="headers" :items="students" item-key="name">
+    <template slot="items" slot-scope="props">
+      <tr>
+        <td>{{ props.item.name }}</td>
+        <td>{{ props.item.dateOfBirth }}</td>
+        <td>{{ props.item.russian }}</td>
+        <td>{{ props.item.math }}</td>
+        <td>{{ props.item.geometry }}</td>
+        <td>{{ props.item.physics }}</td>
+        <td>{{ props.item.chemistry }}</td>
+        <td>{{ props.item.biology }}</td>
+        <td>{{ props.item.socialScience }}</td>
+        <td>{{ props.item.rights }}</td>
+        <td>{{ props.item.history }}</td>
+        <td>{{ props.item.english }}</td>
+        <td>{{ props.item.german }}</td>
+        <td>{{ props.item.art }}</td>
+        <td>{{ props.item.work }}</td>
+        <td>{{ props.item.religion }}</td>
+        <td>{{ props.item.training }}</td>
+        <td>{{ props.item.sambo }}</td>
+        <td>{{ props.item.judo }}</td>
+        <td>{{ props.item.shooting }}</td>
+        <td>{{ props.item.sledding }}</td>
+      </tr>
+    </template>
+  </v-data-table> -->
 </template>
 
 <script>
@@ -60,31 +90,31 @@ export default {
       headers: [
         {
           text: 'ФИО студента',
-          align: 'center',
-          sortable: false,
+          align: 'start',
+          fixed: true,
           value: 'name',
-          width: 250
+          width: '180px'
         },
-        { text: 'Дата рождения', align: 'center', value: 'dateOfBirth', width: 150 },
-        { text: 'Русский язык', align: 'center', value: 'russian', width: 140 },
-        { text: 'Математика', value: 'math', width: 140 },
-        { text: 'Геометрия', value: 'geometry', width: 140 },
-        { text: 'Физика', value: 'physics', width: 100 },
-        { text: 'Химия', value: 'chemistry', width: 100 },
-        { text: 'Биология', value: 'biology', width: 110 },
-        { text: 'Обществ-е', value: 'socialScience', width: 110 },
-        { text: 'Право', value: 'rights', width: 100 },
-        { text: 'История', value: 'history', width: 100 },
-        { text: 'Английский язык', value: 'english', width: 150 },
-        { text: 'Немецкий язык', value: 'german', width: 140 },
-        { text: 'ИЗО', value: 'art', width: 100 },
-        { text: 'Труд', value: 'work', width: 100 },
-        { text: 'Религии мира', value: 'religion', width: 140 },
-        { text: 'Физ-ра', value: 'training', width: 100 },
-        { text: 'Самбо', value: 'sambo', width: 100 },
-        { text: 'Дзюдо', value: 'judo', width: 100 },
-        { text: 'Стрельба', value: 'shooting', width: 110 },
-        { text: 'Езда на санках', value: 'sledding', width: 150 }
+        { text: 'Дата рождения', align: 'start', value: 'dateOfBirth', width: '145px', fixed: true },
+        { text: 'Русский язык', align: 'start', value: 'russian', width: 130 },
+        { text: 'Математика', align: 'start', value: 'math', width: 125 },
+        { text: 'Геометрия', align: 'start', value: 'geometry', width: 115 },
+        { text: 'Физика', align: 'start', value: 'physics', width: 95 },
+        { text: 'Химия', align: 'start', value: 'chemistry', width: 90 },
+        { text: 'Биология', align: 'start', value: 'biology', width: 110 },
+        { text: 'Обществ-е', align: 'start', value: 'socialScience', width: 115 },
+        { text: 'Право', align: 'start', value: 'rights', width: 90 },
+        { text: 'История', align: 'start', value: 'history', width: 100 },
+        { text: 'Английский язык', align: 'start', value: 'english', width: 150 },
+        { text: 'Немецкий язык', align: 'start', value: 'german', width: 145 },
+        { text: 'ИЗО', align: 'start', value: 'art', width: 80 },
+        { text: 'Труд', align: 'start', value: 'work', width: 100 },
+        { text: 'Религии мира', align: 'start', value: 'religion', width: 130 },
+        { text: 'Физ-ра', align: 'start', value: 'training', width: 100 },
+        { text: 'Самбо', align: 'start', value: 'sambo', width: 90 },
+        { text: 'Дзюдо', align: 'start', value: 'judo', width: 90 },
+        { text: 'Стрельба', align: 'start', value: 'shooting', width: 110 },
+        { text: 'Езда на санках', align: 'start', value: 'sledding', width: 135 }
       ],
       students: [
         {
@@ -511,6 +541,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
