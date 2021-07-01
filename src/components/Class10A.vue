@@ -1,6 +1,8 @@
 <template>
   <v-container>
-    <v-card>
+    <v-card
+      elevation="8"
+    >
       <v-card-title>
         Промежуточные оценки за полугодие
         <v-spacer></v-spacer>
@@ -8,14 +10,12 @@
           v-model="search"
           append-icon="mdi-magnify"
           label="Поиск"
-          single-line
-          hide-details
           clearable
           @change="addToState(search)"
         ></v-text-field>
       </v-card-title>
       <v-data-table
-        height="80vh"
+        height="75vh"
         fixed-header
         hide-default-footer
         :headers="headers"

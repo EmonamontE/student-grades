@@ -10,12 +10,12 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    changeSearchedValueForClass10A (state, someValue) {
-      state.searchedValueForClass10A = someValue
+    changeSearchedValueForClass10A (state, payload) {
+      state.searchedValueForClass10A = payload
     },
 
-    changeSearchedValueForClass10B (state, someValue) {
-      state.searchedValueForClass10B = someValue
+    changeSearchedValueForClass10B (state, payload) {
+      state.searchedValueForClass10B = payload
     }
   },
 
