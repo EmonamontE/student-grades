@@ -10,6 +10,8 @@
           label="Поиск"
           single-line
           hide-details
+          clearable
+          @change="addToState(search)"
         ></v-text-field>
       </v-card-title>
       <v-data-table
@@ -18,7 +20,6 @@
         hide-default-footer
         :headers="headers"
         :items="students"
-        item-key="name"
         :search="search"
         :items-per-page="150"
       >
@@ -31,9 +32,15 @@
 import listOfStudents10A from '../students/listOfStudents10A.js'
 
 export default {
+  methods: {
+    addToState (value) {
+      this.$store.commit('changeSearchedValueForClass10A', value)
+    }
+  },
+
   data () {
     return {
-      search: '',
+      search: this.$store.getters.curentSearchedValueForClass10A,
       headers: [
         {
           text: 'ФИО студента',
@@ -68,6 +75,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

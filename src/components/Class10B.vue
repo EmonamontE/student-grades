@@ -10,6 +10,8 @@
           label="Поиск"
           single-line
           hide-details
+          clearable
+          @change="addToState(search)"
         ></v-text-field>
       </v-card-title>
       <v-data-table
@@ -30,18 +32,23 @@
 import listOfStudents10B from '../students/listOfStudents10B.js'
 
 export default {
+  methods: {
+    addToState (value) {
+      this.$store.commit('changeSearchedValueForClass10B', value)
+    }
+  },
+
   data () {
     return {
-      search: '',
+      search: this.$store.getters.curentSearchedValueForClass10B,
       headers: [
         {
           text: 'ФИО студента',
           align: 'start',
-          fixed: true,
           value: 'name',
-          width: '180px'
+          width: 180
         },
-        { text: 'Дата рождения', align: 'start', value: 'dateOfBirth', width: '145px', fixed: true },
+        { text: 'Дата рождения', align: 'start', value: 'dateOfBirth', width: 145 },
         { text: 'Русский язык', align: 'start', value: 'russian', width: 130 },
         { text: 'Математика', align: 'start', value: 'math', width: 125 },
         { text: 'Геометрия', align: 'start', value: 'geometry', width: 115 },
